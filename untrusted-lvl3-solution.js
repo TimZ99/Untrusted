@@ -32,4 +32,3 @@ function validateLevel(map) {
     map.validateAtLeastXObjects(numBlocks, 'block');
     map.validateExactlyXManyObjects(1, 'exit');
 }
- 
