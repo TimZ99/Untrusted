@@ -27,4 +27,3 @@ map.placeObject(map.getWidth() - 5, 10, 'exit');
 
     map.placeObject(map.getWidth() - 5, 5, 'exit');
 }
- 
