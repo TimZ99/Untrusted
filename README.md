@@ -138,6 +138,7 @@ if (me.getX() < 5) {
 ```
 
 ## Level 13
+Just move around until the R gets out of the maze
 ```
 if (!me.last_move) me.last_move = 'right';
 if (me.last_move == 'right') {
