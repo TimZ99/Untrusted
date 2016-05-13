@@ -27,68 +27,64 @@ function startLevel(map) {
             me.giveItemTo(player, 'blueKey');
         },
         'behavior': function (me) {
-            
-
- var player = map.getPlayer();
-            var deltaY = player.getY() - map.getHeight() + 2;
-           
-            if(deltaY != 0) {
-              if(deltaY > 0) 
-               me.move('down');
-             else
-               me.move('up');
-             return; 
-            }
-           
-            var deltaX = me.getX() - player.getX() ;
-            if (deltaX == 0)
-                return;
-                
-            if(deltaX < 0)
-              me.move('right');
-            else
-              me.move('left');              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (!me.last_move) me.last_move = 'right';
+if (me.last_move == 'right') {
+if (me.canMove('up')) {
+me.last_move = 'up';
+me.move('up');
+} else if (me.canMove('right')) {
+me.last_move = 'right';
+me.move('right');
+} else if (me.canMove('down')) {
+me.last_move = 'down';
+me.move('down');
+} else if (me.canMove('left')) {
+me.last_move = 'left';
+me.move('left');
+}
+} else if (me.last_move == 'up') {
+if (me.canMove('left')) {
+me.last_move = 'left';
+me.move('left');
+} else if (me.canMove('up')) {
+me.last_move = 'up';
+me.move('up');
+} else if (me.canMove('right')) {
+me.last_move = 'right';
+me.move('right');
+} else if (me.canMove('down')) {
+me.last_move = 'down';
+me.move('down');
+}
+} else if (me.last_move == 'left') {
+if (me.canMove('down')) {
+me.last_move = 'down';
+me.move('down');
+} else if (me.canMove('left')) {
+me.last_move = 'left';
+me.move('left');
+} else if (me.canMove('up')) {
+me.last_move = 'up';
+me.move('up');
+} else if (me.canMove('right')) {
+me.last_move = 'right';
+me.move('right');
+}
+} else if (me.last_move == 'down') {
+if (me.canMove('right')) {
+me.last_move = 'right';
+me.move('right');
+} else if (me.canMove('down')) {
+me.last_move = 'down';
+me.move('down');
+} else if (me.canMove('left')) {
+me.last_move = 'left';
+me.move('left');
+} else if (me.canMove('up')) {
+me.last_move = 'up';
+me.move('up');
+}
+} 
         }
     });
 
