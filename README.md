@@ -234,21 +234,25 @@ var player = map.getPlayer();
 ```
 ## Level 17
 
-Call to make a bridge
+Follow the lines. I finished the first time without the code and just being lucky
 ```
-map.defineObject('barrier', {
-        'symbol': '░',
-        'color': 'green',
-        'impassable': true,
-        'passableFor': ['robot']
-      });
-      
-      for (var x = fl(w/2) - 5; x < fl(w/2) + 5; x++) {
-        map.placeObject(x, fl(h/2), 'barrier');
+function goto(ctx, method, target) {
+            var info = map.getCanvasCoords(target);
+            ctx[method](info.x,info.y);
+        }
         
-      }
+        if((t1.getType() == 'teleporter') && (t2.getType() =='teleporter')) {
+            var ctx = map.getCanvasContext();
+            ctx.beginPath();
+            ctx.strokeStyle = 'blue';
+            ctx.lineWidth = 2;
+            goto(ctx,'moveTo', t1);
+            goto(ctx,'lineTo', t2);
+            ctx.stroke();            
+       }
 ```
 ##Level 18
+Call to make a bridge
 ```
 map.defineObject('barrier', {
         'symbol': '░',
