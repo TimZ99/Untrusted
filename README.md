@@ -252,7 +252,7 @@ function goto(ctx, method, target) {
             ctx.stroke();            
        }
 ```
-##Level 18
+## Level 18
 Call to make a bridge
 ```
 map.defineObject('barrier', {
@@ -268,5 +268,9 @@ map.defineObject('barrier', {
       }
 ```
 
-## Level 19 - 25
+## Level 19
+Just try
+
+
+## Level 20- 22
 Work in progress
